@@ -1,0 +1,61 @@
+{
+  "address": "4xsSjQ4drV5jhYYgeCZMHX9tM3k6vMRvbdpySwmi5cvw",
+  "metadata": {
+    "name": "policy_deny_all",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "validate",
+      "discriminator": [
+        60,
+        252,
+        90,
+        66,
+        246,
+        253,
+        232,
+        139
+      ],
+      "accounts": [
+        {
+          "name": "vault"
+        }
+      ],
+      "args": [
+        {
+          "name": "operation",
+          "type": {
+            "defined": {
+              "name": "ValidateOperation"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Denied",
+      "msg": "Action denied by policy."
+    }
+  ],
+  "types": [
+    {
+      "name": "ValidateOperation",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Creation"
+          },
+          {
+            "name": "Execution"
+          }
+        ]
+      }
+    }
+  ]
+}

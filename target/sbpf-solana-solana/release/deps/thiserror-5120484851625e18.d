@@ -1,0 +1,11 @@
+/home/savvy/Documents/protocol/target/sbpf-solana-solana/release/deps/libthiserror-5120484851625e18.rmeta: /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/lib.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/aserror.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/display.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/provide.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/var.rs
+
+/home/savvy/Documents/protocol/target/sbpf-solana-solana/release/deps/libthiserror-5120484851625e18.rlib: /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/lib.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/aserror.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/display.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/provide.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/var.rs
+
+/home/savvy/Documents/protocol/target/sbpf-solana-solana/release/deps/thiserror-5120484851625e18.d: /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/lib.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/aserror.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/display.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/provide.rs /home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/var.rs
+
+/home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/lib.rs:
+/home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/aserror.rs:
+/home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/display.rs:
+/home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/provide.rs:
+/home/savvy/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.16/src/var.rs:

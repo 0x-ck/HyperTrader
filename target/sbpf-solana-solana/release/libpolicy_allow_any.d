@@ -1,0 +1,1 @@
+/home/savvy/Documents/protocol/target/sbpf-solana-solana/release/libpolicy_allow_any.rlib: /home/savvy/Documents/protocol/lib/hyro_sdk/src/lib.rs /home/savvy/Documents/protocol/lib/hyro_sdk/src/validate.rs /home/savvy/Documents/protocol/programs/policy_allow_any/src/lib.rs

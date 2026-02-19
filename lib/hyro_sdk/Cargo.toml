@@ -1,0 +1,26 @@
+[dependencies.anchor-lang]
+features = ["derive"]
+version = "0.31.1"
+
+
+[features]
+default = []
+devnet = []
+governance = []
+idl-build = ["anchor-lang/idl-build"]
+
+[lib]
+name = "hyro_sdk"
+path = "src/lib.rs"
+
+[package]
+description = "Hyro SDK"
+edition = "2021"
+license = "Apache-2.0"
+name = "hyro_sdk"
+readme = false
+version = "0.1.0"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

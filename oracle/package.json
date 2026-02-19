@@ -1,0 +1,35 @@
+{
+  "name": "hyro-challenge-oracle",
+  "version": "1.0.0",
+  "description": "Oracle service for Hyro challenge updates",
+  "main": "dist/index.js",
+  "scripts": {
+    "generate-client": "ts-node generate-codama-client.ts",
+    "build": "npm run generate-client && tsc",
+    "start": "node dist/index.js",
+    "dev": "npm run generate-client && ts-node src/index.ts",
+    "generate-keypair": "ts-node scripts/generate-keypair.ts",
+    "test-webhook": "bash scripts/test-webhook.sh",
+    "simulate-trading": "ts-node scripts/simulate-trading.ts",
+    "get-challenge-address": "ts-node scripts/get-challenge-address.ts"
+  },
+  "dependencies": {
+    "@solana/addresses": "^2.0.0-rc.2",
+    "@solana/kit": "^2.0.0-rc.2",
+    "@solana/signers": "^2.0.0-rc.2",
+    "@solana/transaction-messages": "^2.0.0-rc.2",
+    "decimal.js": "^10.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nats": "^2.19.0"
+  },
+  "devDependencies": {
+    "@codama/nodes-from-anchor": "^1.0.0",
+    "@codama/renderers-js": "^1.0.0",
+    "codama": "^1.0.0",
+    "@types/express": "^4.17.20",
+    "@types/node": "^20.8.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

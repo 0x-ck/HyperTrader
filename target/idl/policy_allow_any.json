@@ -1,0 +1,54 @@
+{
+  "address": "Ag11DzSV7e6yrfCSKQx67gzEy6JbkEBFys8yreeRRc5N",
+  "metadata": {
+    "name": "policy_allow_any",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "validate",
+      "discriminator": [
+        60,
+        252,
+        90,
+        66,
+        246,
+        253,
+        232,
+        139
+      ],
+      "accounts": [
+        {
+          "name": "vault"
+        }
+      ],
+      "args": [
+        {
+          "name": "operation",
+          "type": {
+            "defined": {
+              "name": "ValidateOperation"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "ValidateOperation",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Creation"
+          },
+          {
+            "name": "Execution"
+          }
+        ]
+      }
+    }
+  ]
+}

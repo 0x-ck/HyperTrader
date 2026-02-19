@@ -1,0 +1,226 @@
+{
+  "address": "DP8vZFZ1PtxAU9SSp46eGtggxBHa6N6hj5pQaGAW9gKx",
+  "metadata": {
+    "name": "policy_multisig",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "approve",
+      "discriminator": [
+        69,
+        74,
+        217,
+        36,
+        115,
+        117,
+        97,
+        76
+      ],
+      "accounts": [
+        {
+          "name": "policy_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_multisig",
+      "discriminator": [
+        220,
+        130,
+        117,
+        21,
+        27,
+        227,
+        78,
+        213
+      ],
+      "accounts": [
+        {
+          "name": "vault"
+        },
+        {
+          "name": "policy_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "vault"
+              }
+            ]
+          }
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "owners",
+          "type": {
+            "vec": "pubkey"
+          }
+        },
+        {
+          "name": "threshold",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "validate",
+      "discriminator": [
+        60,
+        252,
+        90,
+        66,
+        246,
+        253,
+        232,
+        139
+      ],
+      "accounts": [
+        {
+          "name": "vault"
+        }
+      ],
+      "args": [
+        {
+          "name": "operation",
+          "type": {
+            "defined": {
+              "name": "ValidateOperation"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "MultiSig",
+      "discriminator": [
+        185,
+        236,
+        37,
+        72,
+        176,
+        174,
+        250,
+        169
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidThreshold",
+      "msg": "Invalid threshold."
+    },
+    {
+      "code": 6001,
+      "name": "InvalidOwnersLen",
+      "msg": "Owners length must be non zero."
+    },
+    {
+      "code": 6002,
+      "name": "InvalidOwner",
+      "msg": "Invalid owner."
+    },
+    {
+      "code": 6003,
+      "name": "NotEnoughSigners",
+      "msg": "Not enough owners signed this transaction."
+    },
+    {
+      "code": 6004,
+      "name": "UniqueOwners",
+      "msg": "Owners must be unique"
+    },
+    {
+      "code": 6005,
+      "name": "AlreadyExecuted",
+      "msg": "The given transaction has already been executed."
+    },
+    {
+      "code": 6006,
+      "name": "TransactionAlreadyPending",
+      "msg": "A transaction is already pending approval."
+    },
+    {
+      "code": 6007,
+      "name": "NoPendingTransaction",
+      "msg": "No pending transaction to approve."
+    },
+    {
+      "code": 6008,
+      "name": "InvalidPendingTransaction",
+      "msg": "The given transaction is not pending approval."
+    },
+    {
+      "code": 6009,
+      "name": "InvalidPolicyPda",
+      "msg": "Invalid policy PDA."
+    }
+  ],
+  "types": [
+    {
+      "name": "MultiSig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owners",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "threshold",
+            "type": "u64"
+          },
+          {
+            "name": "pending_transaction",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "pending_signatures",
+            "type": {
+              "vec": "bool"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ValidateOperation",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Creation"
+          },
+          {
+            "name": "Execution"
+          }
+        ]
+      }
+    }
+  ]
+}

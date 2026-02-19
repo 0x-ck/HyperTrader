@@ -1,0 +1,1 @@
+/home/savvy/Documents/protocol/target/sbpf-solana-solana/release/libpolicy_limit_transfer.rlib: /home/savvy/Documents/protocol/lib/hyro_sdk/src/lib.rs /home/savvy/Documents/protocol/lib/hyro_sdk/src/validate.rs /home/savvy/Documents/protocol/programs/policy_limit_transfer/src/lib.rs

@@ -1,0 +1,2 @@
+# HYRO Protocol – Technical Whitepaper
+HYRO is a decentralized, non-custodial vault protocol built on Solana that creates direct connections between Liquidity Providers (LPs) and asset managers through transparent, verifiable, and automated capital allocation infrastructure. By leveraging Solana's high-performance blockchain, HYRO eliminates traditional intermediaries while maintaining institutional-grade security and compliance standards.

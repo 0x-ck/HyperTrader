@@ -1,0 +1,10 @@
+/home/savvy/Documents/protocol/target/debug/deps/spl_token_metadata_interface-6ad54639093ab894.d: /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/lib.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/error.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/instruction.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/state.rs
+
+/home/savvy/Documents/protocol/target/debug/deps/libspl_token_metadata_interface-6ad54639093ab894.so: /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/lib.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/error.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/instruction.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/state.rs
+
+/home/savvy/Documents/protocol/target/debug/deps/libspl_token_metadata_interface-6ad54639093ab894.rlib: /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/lib.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/error.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/instruction.rs /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/state.rs
+
+/home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/lib.rs:
+/home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/error.rs:
+/home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/instruction.rs:
+/home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-metadata-interface-0.6.0/src/state.rs:

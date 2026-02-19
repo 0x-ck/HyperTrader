@@ -1,0 +1,1 @@
+../../target/types/policy_challenges.ts

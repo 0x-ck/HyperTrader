@@ -1,0 +1,25 @@
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/dropper/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/hyro_protocol/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/policy_allow_any/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/policy_challenges/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/policy_deny_all/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/policy_limit_transfer/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/policy_multisig/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/savvy/Documents/Hyper/HyperTrader/programs/policy_owners/Cargo.toml
+workspace: /home/savvy/Documents/Hyper/HyperTrader/Cargo.toml
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.22s

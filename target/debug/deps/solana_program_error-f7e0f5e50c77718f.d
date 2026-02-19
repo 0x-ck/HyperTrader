@@ -1,0 +1,7 @@
+/home/savvy/Documents/protocol/target/debug/deps/solana_program_error-f7e0f5e50c77718f.d: /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-program-error-2.2.2/src/lib.rs
+
+/home/savvy/Documents/protocol/target/debug/deps/libsolana_program_error-f7e0f5e50c77718f.rlib: /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-program-error-2.2.2/src/lib.rs
+
+/home/savvy/Documents/protocol/target/debug/deps/libsolana_program_error-f7e0f5e50c77718f.rmeta: /home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-program-error-2.2.2/src/lib.rs
+
+/home/savvy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-program-error-2.2.2/src/lib.rs:

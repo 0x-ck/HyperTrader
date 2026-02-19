@@ -1,0 +1,142 @@
+{
+  "address": "G2pCRumKN4itQdQUbwqy2r6wUNhjokHdQ1Yx6BbCKtRT",
+  "metadata": {
+    "name": "policy_owners",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "initialize_owners",
+      "discriminator": [
+        145,
+        41,
+        103,
+        101,
+        229,
+        205,
+        135,
+        157
+      ],
+      "accounts": [
+        {
+          "name": "vault"
+        },
+        {
+          "name": "policy_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "vault"
+              }
+            ]
+          }
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "owners",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "validate",
+      "discriminator": [
+        60,
+        252,
+        90,
+        66,
+        246,
+        253,
+        232,
+        139
+      ],
+      "accounts": [
+        {
+          "name": "vault"
+        }
+      ],
+      "args": [
+        {
+          "name": "operation",
+          "type": {
+            "defined": {
+              "name": "ValidateOperation"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Owners",
+      "discriminator": [
+        96,
+        145,
+        150,
+        191,
+        50,
+        61,
+        92,
+        51
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "UnauthorizedSender",
+      "msg": "Unauthorized sender."
+    },
+    {
+      "code": 6001,
+      "name": "InvalidPolicyPda",
+      "msg": "Invalid policy PDA."
+    }
+  ],
+  "types": [
+    {
+      "name": "Owners",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owners",
+            "type": {
+              "vec": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ValidateOperation",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Creation"
+          },
+          {
+            "name": "Execution"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "challenge_id": "550e8400-e29b-41d4-a716-446655440002",
+  "stage_id": "101",
+  "stage_sequence": 1,
+  "stage_type": "evaluation",
+  "effective_from": "2024-01-15T10:30:00Z",
+  "starting_balance": "25000.00",
+  "current_balance": "24500.00",
+  "profit_target": {
+    "target_percentage": 8.0,
+    "target_amount": "2000.00",
+    "achieved_percentage": -2.0,
+    "achieved_amount": "-500.00",
+    "target_met": false
+  },
+  "trading_days": {
+    "required_days": 4,
+    "completed_days": 2,
+    "requirement_met": false,
+    "remaining_days": 2
+  },
+  "max_loss": {
+    "equity_loss_limit_percentage": 5.0,
+    "equity_loss_limit_amount": "1250.00",
+    "current_loss": "500.00",
+    "current_loss_percentage": 2.0,
+    "violation_triggered": false
+  },
+  "drawdown_limit": {
+    "drawdown_type": "static",
+    "limit_percentage": 5.0,
+    "limit_amount": "1250.00",
+    "max_equity": "25000.00",
+    "current_drawdown": "500.00",
+    "current_drawdown_percentage": 2.0,
+    "violation_triggered": false
+  },
+  "state_change_event": {
+    "event_type": "update",
+    "timestamp": "2024-01-17T14:30:00Z",
+    "previous_status": "active",
+    "new_status": "active",
+    "reason": "regular_update"
+  }
+}
+
