@@ -5,7 +5,7 @@ use hyro_sdk::ValidateOperation;
 use std::convert::Into;
 use std::ops::Deref;
 use crate::manager_registry::{ManagerRegistry, ManagerProfile, VerificationStatus};
-use anchor_spl::token::{self, Token, TokenAccount, Transfer};
+use anchor_spl::token::TokenAccount;
 
 #[account]
 pub struct Vault {
@@ -225,6 +225,27 @@ pub struct IssueChildVault<'info> {
     pub system_program: Program<'info, System>,
 }
 
+#[derive(Accounts)]
+pub struct ValidateBalances<'info> {
+    /// Vault state account
+    pub vault: Account<'info, Vault>,
+
+    /// Vault token account holding funds
+    #[account(
+        constraint = vault_token_account.owner == vault.authority @ ErrorCode::InvalidVaultTokenAccount
+    )]
+    pub vault_token_account: Account<'info, TokenAccount>,
+
+    /// User token account involved in the operation
+    #[account(
+        constraint = user_token_account.owner == user.key() @ ErrorCode::InvalidUserTokenAccount
+    )]
+    pub user_token_account: Account<'info, TokenAccount>,
+
+    /// User expected to provide/receive funds
+    pub user: Signer<'info>,
+}
+
 pub fn initialize_vault(
     ctx: Context<InitializeVault>,
     policy_program: Pubkey,
@@ -428,6 +449,31 @@ pub fn issue_child_vault(
     
     Ok(())
 }
+
+/// Simple validator that checks vault and user token account balances
+/// against a requested `amount`. This can be called directly or via CPI
+/// before executing a transfer.
+pub fn validate_balances(
+    ctx: Context<ValidateBalances>,
+    amount: u64,
+) -> Result<()> {
+    let vault_token_account = &ctx.accounts.vault_token_account;
+    let user_token_account = &ctx.accounts.user_token_account;
+
+    // Ensure the vault has enough on-chain balance tracked and in the token account
+    require!(
+        vault_token_account.amount >= amount,
+        ErrorCode::InsufficientFunds
+    );
+
+    // Ensure the user token account has enough balance when required
+    require!(
+        user_token_account.amount >= amount,
+        ErrorCode::InsufficientUserBalance
+    );
+
+    Ok(())
+}
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]
 pub struct TransactionAccount {
     pub pubkey: Pubkey,
@@ -470,4 +516,10 @@ pub enum ErrorCode {
     InvalidPolicyAccount,
     #[msg("Invalid policy program.")]
     InvalidPolicyProgram,
+    #[msg("Invalid vault token account.")]
+    InvalidVaultTokenAccount,
+    #[msg("Invalid user token account.")]
+    InvalidUserTokenAccount,
+    #[msg("Insufficient user token balance.")]
+    InsufficientUserBalance,
 }
