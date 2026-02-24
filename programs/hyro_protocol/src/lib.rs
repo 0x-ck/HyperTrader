@@ -79,6 +79,13 @@ pub mod hyro_protocol {
         vault::issue_child_vault(ctx, seed, allocation, manager_fees)
     }
 
+    pub fn validate_balances(
+        ctx: Context<ValidateBalances>,
+        amount: u64,
+    ) -> Result<()> {
+        vault::validate_balances(ctx, amount)
+    }
+
     #[cfg(feature = "enable_verification")]
     pub fn initialize_verification(
         ctx: Context<verification::InitializeVerification>,
