@@ -3,6 +3,37 @@ use hyro_sdk::{get_context, ValidateOperation, ValidateContext};
 
 declare_id!("G2pCRumKN4itQdQUbwqy2r6wUNhjokHdQ1Yx6BbCKtRT");
 
+fn owners_contains_sender(policy_account: &AccountInfo, sender: &Pubkey) -> Result<bool> {
+    let data = policy_account.data.borrow();
+
+    // Anchor account layout:
+    // - 8 bytes discriminator
+    // - 4 bytes vec length (u32 LE)
+    // - N * 32 bytes pubkeys
+    require!(data.len() >= 8 + 4, ErrorCode::InvalidPolicyData);
+
+    let mut offset = 8;
+    let len_bytes: [u8; 4] = data[offset..offset + 4]
+        .try_into()
+        .map_err(|_| ErrorCode::InvalidPolicyData)?;
+    let owners_len = u32::from_le_bytes(len_bytes) as usize;
+    offset += 4;
+
+    let required_len = offset
+        .checked_add(owners_len.checked_mul(32).ok_or(ErrorCode::InvalidPolicyData)?)
+        .ok_or(ErrorCode::InvalidPolicyData)?;
+    require!(data.len() >= required_len, ErrorCode::InvalidPolicyData);
+
+    let sender_bytes = sender.to_bytes();
+    for i in 0..owners_len {
+        let start = offset + i * 32;
+        if data[start..start + 32] == sender_bytes {
+            return Ok(true);
+        }
+    }
+    Ok(false)
+}
+
 #[program]
 pub mod policy_owners {
     use super::*;
@@ -29,9 +60,8 @@ pub mod policy_owners {
                 let sender = execution_ctx.signer(ctx.remaining_accounts);
                 require!(policy_account.key() == expected_policy_pda, ErrorCode::InvalidPolicyPda);
 
-                let policy_account_data = policy_account.data.borrow();
-                let policy = Owners::try_deserialize(&mut &policy_account_data[..])?;
-                if !policy.owners.contains(&sender.key()) {
+                let sender_key = sender.key();
+                if !owners_contains_sender(policy_account, &sender_key)? {
                     return Err(ErrorCode::UnauthorizedSender.into());
                 }
                 Ok(())
@@ -85,4 +115,6 @@ pub enum ErrorCode {
     UnauthorizedSender,
     #[msg("Invalid policy PDA.")]
     InvalidPolicyPda,
+    #[msg("Invalid policy account data.")]
+    InvalidPolicyData,
 }
