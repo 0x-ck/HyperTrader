@@ -29,19 +29,21 @@ pub fn join_challenge(
     dto.validate()?;
     dto.apply_challenge(challenge);
 
+    let now = Clock::get()?.unix_timestamp as u64;
+
     // Set protected fields that cannot be changed after creation
     challenge.challenge_id = challenge_id;
     challenge.stage_id = challenge_template.stage_id;
     challenge.stage_sequence = challenge_template.stage_sequence;
     challenge.stage_type = challenge_template.stage_type;
-    challenge.effective_from = Clock::get()?.unix_timestamp as u64;
+    challenge.effective_from = now;
     challenge.starting_balance = challenge_template.starting_deposit;
     challenge.latest_balance = challenge_template.starting_deposit;
     challenge.user = ctx.accounts.participant.key();
     
     // Set timestamps
-    challenge.created_at = Clock::get()?.unix_timestamp as u64;
-    challenge.updated_at = Clock::get()?.unix_timestamp as u64;
+    challenge.created_at = now;
+    challenge.updated_at = now;
 
     // Update template statistics
     challenge_template.participants += 1.into();
