@@ -474,6 +474,17 @@ pub fn validate_balances(
 
     Ok(())
 }
+
+#[derive(Accounts)]
+pub struct ValidateVault<'info> {
+    pub vault: Account<'info, Vault>,
+}
+
+pub fn validate_vault(
+    ctx: Context<ValidateVault>,
+) -> Result<()> {
+    Ok(())
+}
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]
 pub struct TransactionAccount {
     pub pubkey: Pubkey,
